@@ -9,14 +9,18 @@ VIRTUALX_REQUIRED="test"
 
 inherit desktop xdg
 
+APP_NAME="freeplane"
+
 DESCRIPTION="Java application for Mind Mapping, Knowledge and Project Management"
 HOMEPAGE="https://www.freeplane.org/"
-SRC_URI="mirror://sourceforge/${PN}/${PN}%20stable/${PN}_bin-${PV}.zip"
+SRC_URI="mirror://sourceforge/${APP_NAME}/${APP_NAME}%20stable/${APP_NAME}_bin-${PV}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
+
+S="${WORKDIR}/${APP_NAME}-${PV}"
 
 RDEPEND=">=virtual/jre-1.8"
 DEPEND="${DEPEND}\
@@ -24,15 +28,15 @@ DEPEND="${DEPEND}\
 
 src_install() {
 	cd ${S} || die
-	sed -e "/freepath=/s:=.*:=${EROOT}opt/${PN}:" \
+	sed -e "/freepath=/s:=.*:=${EROOT}opt/${APP_NAME}:" \
 		-i freeplane.sh
 	newbin freeplane.sh freeplane
 
 	# install icons
-	newicon "${S}/freeplane.png" ${PN}.png
-	make_desktop_entry ${PN} "Freeplane" ${PN} "Education" "MimeType=application/x-freeplane;"
+	newicon "${S}/freeplane.png" "${APP_NAME}.png"
+	make_desktop_entry "${APP_NAME}" "Freeplane" "${APP_NAME}" "Education" "MimeType=application/x-freeplane;"
 
-	insinto /opt/${PN}
+	insinto "/opt/${APP_NAME}"
 	doins framework.jar freeplanelauncher.jar \
 		freeplane.policy props.xargs init.xargs *.l4j.ini
 	doins -r core doc fwdir plugins resources

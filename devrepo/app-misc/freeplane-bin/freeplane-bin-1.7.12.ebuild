@@ -23,11 +23,10 @@ IUSE=""
 S="${WORKDIR}/${APP_NAME}-${PV}"
 
 RDEPEND=">=virtual/jre-1.8"
-DEPEND="${DEPEND}\
+DEPEND="
 	app-arch/unzip"
 
 src_install() {
-	cd ${S} || die
 	sed -e "/freepath=/s:=.*:=${EROOT}opt/${APP_NAME}:" \
 		-i freeplane.sh
 	newbin freeplane.sh freeplane

@@ -30,7 +30,7 @@ src_install() {
 
 	# install icons
 	newicon "${S}/freeplane.png" ${PN}.png
-	make_desktop_entry ${PN} "Freeplane" ${PN} "Utility" "MimeType=application/x-freeplane;"
+	make_desktop_entry ${PN} "Freeplane" ${PN} "Education" "MimeType=application/x-freeplane;"
 
 	insinto /opt/${PN}
 	doins framework.jar freeplanelauncher.jar \

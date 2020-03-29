@@ -13,8 +13,7 @@ APP_NAME="freeplane"
 
 DESCRIPTION="Java application for Mind Mapping, Knowledge and Project Management"
 HOMEPAGE="https://www.freeplane.org/"
-#SRC_URI="mirror://sourceforge/${APP_NAME}/${APP_NAME}%20stable/${APP_NAME}_bin-${PV}.zip"
-SRC_URI="https://downloads.sourceforge.net/project/${APP_NAME}/${APP_NAME}%20stable/archive/${PV}/${APP_NAME}_bin-${PV}.zip"
+SRC_URI="mirror://sourceforge/${APP_NAME}/${APP_NAME}%20stable/${APP_NAME}_bin-${PV}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -34,10 +33,10 @@ src_install() {
 
 	# install icons
 	newicon "${S}/freeplane.png" "${APP_NAME}.png"
-	make_desktop_entry "${APP_NAME}" "Freeplane" "${APP_NAME}" "Education" "MimeType=application/x-mind;"
+	make_desktop_entry "${APP_NAME}" "Freeplane" "${APP_NAME}" "Utility" "MimeType=application/x-mind;"
 
 	insinto "/opt/${APP_NAME}"
 	doins framework.jar freeplanelauncher.jar \
 		freeplane.policy props.xargs init.xargs *.l4j.ini
-	doins -r core doc plugins resources
+	doins -r core doc fwdir plugins resources
 }

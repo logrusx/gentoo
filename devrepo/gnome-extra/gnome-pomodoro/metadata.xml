@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM 'http://www.gentoo.org/dtd/metadata.dtd'>
+<pkgmetadata>
+	<longdescription>
+		GNOME Pomodoro is a small application that helps managing time according to Pomodoro Technique. It intends to improve productivity and focus by taking short breaks. It uses GNOME technologies, and so it has complete integration with the GNOME desktop environment.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">gnome-pomodoro</remote-id>
+	</upstream>
+	<use>
+		<flag name="appindicator">Build in support for notifications using libayatana appindicator</flag>
+		<flag name="nls">Enable native language support</flag>
+	</use>
+</pkgmetadata>

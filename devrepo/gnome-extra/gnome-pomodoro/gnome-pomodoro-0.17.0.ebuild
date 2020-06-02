@@ -38,7 +38,6 @@ src_prepare() {
 }
 
 src_configure() {
-	# shellcheck disable=SC2046
 	gnome2_src_configure \
 	$(use_enable nls) \
 	$(use_enable static-libs static)

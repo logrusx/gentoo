@@ -18,19 +18,27 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-libs/glib:2 \
-	 gtk2? ( x11-libs/gtk+:2 ) \
+	 gtk2? ( >=x11-libs/gtk+-2.18:2 ) \
+	 !gtk2? ( >=x11-libs/gtk+-2.91:3 )
 	 x11-libs/gtk+:2 \
 	 dev-dotnet/gtk-sharp:2 \
 	 >=dev-libs/libdbusmenu-12.10.3[gtk]
 	 >=mate-base/mate-common-1.1 \
-	 doc? ( >=dev-util/gtk-doc-1.0 ) \
+	 doc? ( >=dev-util/gtk-doc-1.14 ) \
 	 >=dev-libs/libayatana-indicator-0.4 \
-	 sys-devel/automake:1.11 \
-	 >=dev-util/gtk-doc-1.14"
+	 vala? ( $(vala_depend) \
+		 dev-util/ayatana-ido[vala] ) \
+	 >=dev-libs/glib-2.10 \
+	 dev-util/glib-utils \
+	 >=dev-python/pygtk-2.14:2"
 
-DEPEND="${RDEPEND}
-	virtual/pkgconfig \
-	vala? ( $(vala_depend) )"
+BDEPEND="virtual/pkgconfig \
+	 sys-devel/automake:1.11 \
+         >=sys-devel/autoconf-2.64 \
+         >=sys-devel/libtool-2.2:2"
+
+DEPEND="${RDEPEND} \
+	${BDEPEND} "
 
 src_prepare() {
 	use vala && vala_src_prepare

@@ -8,7 +8,6 @@
 		<remote-id type="github">gnome-pomodoro</remote-id>
 	</upstream>
 	<use>
-		<flag name="appindicator">Build in support for notifications using libayatana appindicator</flag>
-		<flag name="nls">Enable native language support</flag>
+		<flag name="appindicator">Build in support for notifications using libayatana appindicator3</flag>
 	</use>
 </pkgmetadata>

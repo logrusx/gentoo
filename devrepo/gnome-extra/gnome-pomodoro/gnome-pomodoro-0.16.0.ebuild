@@ -18,13 +18,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="appindicator nls static-libs"
 
-RDEPEND="dev-libs/appstream-glib[introspection]
-	dev-libs/dbus-glib
-	dev-libs/libpeas
-	media-libs/gst-plugins-base:1.0
-	>=x11-libs/gtk+-3.20:3
-	>=dev-libs/gom-0.3
-	appindicator? ( dev-libs/libayatana-appindicator )"
+RDEPEND=">=gnome-base/gnome-shell-3.34
+	 dev-libs/appstream-glib[introspection]
+	 dev-libs/dbus-glib
+	 dev-libs/libpeas
+	 media-libs/gst-plugins-base:1.0
+	 >=x11-libs/gtk+-3.20:3
+	 >=dev-libs/gom-0.3
+	 appindicator? ( dev-libs/libayatana-appindicator )"
 DEPEND="${RDEPEND}
 	$(vala_depend)
 	dev-util/intltool

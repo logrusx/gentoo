@@ -30,7 +30,8 @@ RDEPEND="dev-libs/glib:2 \
 		 dev-util/ayatana-ido[vala] ) \
 	 >=dev-libs/glib-2.10 \
 	 dev-util/glib-utils \
-	 >=dev-python/pygtk-2.14:2"
+	 >=dev-python/pygtk-2.14:2 \
+         doc? ( >=dev-util/gtk-doc-1.0 )"
 
 BDEPEND="virtual/pkgconfig \
 	 sys-devel/automake:1.11 \

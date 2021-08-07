@@ -18,7 +18,7 @@ IUSE="-gtk2 -test"
 RDEPEND="dev-util/glib-utils \
 	 gtk2? ( >=x11-libs/gtk+-2.18:2 ) \
 	 !gtk2? ( >=x11-libs/gtk+-3.6:3 )
-	 >=dev-libs/ayatana-ido-0.4.0"
+	 >=dev-libs/ayatana-ido-0.8.0"
 
 BDEPEND=">=virtual/pkgconfig-0.9.0 \
 	 >=sys-devel/autoconf-2.64 \

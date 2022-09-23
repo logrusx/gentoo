@@ -1,12 +1,12 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 VALA_MIN_API_VERSION="0.28"
 VALA_USE_DEPEND="vapigen"
 
-inherit plocale gnome2 vala meson
+inherit gnome2 vala meson
 
 DESCRIPTION="A Pomodoro timer for Gnome"
 HOMEPAGE="http://gnomepomodoro.org"

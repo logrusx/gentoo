@@ -6,7 +6,7 @@ EAPI=7
 VALA_MIN_API_VERSION="0.28"
 VALA_USE_DEPEND="vapigen"
 
-inherit gnome2 vala meson
+inherit gnome2 vala meson xdg
 
 DESCRIPTION="A Pomodoro timer for Gnome"
 HOMEPAGE="http://gnomepomodoro.org"
@@ -20,13 +20,14 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	 >=dev-libs/glib-2.38.0:2
 	 >=x11-libs/gtk+-3.20:3
-	 >=gnome-base/gnome-shell-45
+	 >=gnome-base/gnome-shell-3.38
 	 x11-libs/gdk-pixbuf:2
 	 >=dev-libs/gobject-introspection-1.10.0
 	 >=dev-libs/libpeas-1.5.0
 	 >=dev-libs/gom-0.3
 	 >=media-libs/gstreamer-1.0.10:1.0
 	 >=media-libs/libcanberra-0.30
+	 >=dev-libs/json-glib-1.6.2
 	 dev-db/sqlite:3
 	 x11-libs/cairo"
 DEPEND="${RDEPEND}
@@ -47,6 +48,21 @@ src_compile(){
 	meson_src_compile
 }
 
+src_presint(){
+	xdg_pkg_preinst
+}
+
 src_install(){
 	meson_src_install
 }
+
+pkg_postinst() {
+	gnome2_schemas_update
+	xdg_pkg_postinst
+}
+
+pkg_postrm() {
+	gnome2_schemas_update
+	xdg_pkg_postrm
+}
+

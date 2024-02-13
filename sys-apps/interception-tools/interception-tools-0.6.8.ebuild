@@ -6,7 +6,7 @@ EAPI=8
 inherit systemd cmake
 
 DESCRIPTION="A small set of utilities for operating on input events of evdev devices"
-HOMEPAGE="https://gitlab.com/interception/linux/tools/-/tree/master/"
+HOMEPAGE="https://gitlab.com/interception/linux/tools"
 SRC_URI="https://gitlab.com/interception/linux/tools/-/archive/v${PV}/tools-v${PV}.tar.gz"
 
 LICENSE="GPLv3"

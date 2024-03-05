@@ -20,16 +20,16 @@ SLOT="0"
 IUSE=""
 
 RDEPEND="
-	 >=dev-libs/glib-2.38.0:2
-	 >=x11-libs/gtk+-3.20:3
-	 >=gnome-base/gnome-shell-3.38
-	 x11-libs/gdk-pixbuf:2
-	 >=dev-libs/gobject-introspection-1.10.0
-	 >=dev-libs/libpeas-1.5.0
-	 >=dev-libs/gom-0.3
-	 >=media-libs/gstreamer-1.0.10:1.0
-	 >=media-libs/libcanberra-0.30
-	 dev-db/sqlite:3
+	 dev-libs/glib
+	 x11-libs/gtk+
+	 gnome-base/gnome-shell
+	 x11-libs/gdk-pixbuf
+	 dev-libs/gobject-introspection
+	 dev-libs/libpeas
+	 dev-libs/gom
+	 media-libs/gstreamer
+	 media-libs/libcanberra
+	 dev-db/sqlite
 	 x11-libs/cairo"
 DEPEND="${RDEPEND}
 	$(vala_depend)
@@ -39,6 +39,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	vala_src_prepare
 	gnome2_src_prepare
+	xdg_environment_reset
 }
 
 src_configure(){
@@ -52,3 +53,14 @@ src_compile(){
 src_install(){
 	meson_src_install
 }
+
+pkg_postinst() {
+    gnome2_schemas_update
+    xdg_pkg_postinst
+}
+
+pkg_postrm() {
+    gnome2_schemas_update
+    xdg_pkg_postrm
+}
+

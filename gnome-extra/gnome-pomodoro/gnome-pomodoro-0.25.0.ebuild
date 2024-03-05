@@ -38,6 +38,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	vala_src_prepare
 	gnome2_src_prepare
+	xdg_environment_reset
 }
 
 src_configure(){
@@ -46,14 +47,6 @@ src_configure(){
 
 src_compile(){
 	meson_src_compile
-}
-
-src_presint(){
-	xdg_pkg_preinst
-}
-
-src_install(){
-	meson_src_install
 }
 
 pkg_postinst() {

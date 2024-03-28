@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	 >=dev-libs/glib-2.38.0:2
 	 >=x11-libs/gtk+-3.20:3
-	 >=gnome-base/gnome-shell-3.38
+	 >=gnome-base/gnome-shell-45
 	 x11-libs/gdk-pixbuf:2
 	 >=dev-libs/gobject-introspection-1.10.0
 	 >=dev-libs/libpeas-1.5.0

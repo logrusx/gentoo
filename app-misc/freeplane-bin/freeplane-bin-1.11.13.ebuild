@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-JAVA_PKG_IUSE="doc"
+#JAVA_PKG_IUSE="doc"
 
-VIRTUALX_REQUIRED="test"
+#VIRTUALX_REQUIRED="test"
 
 inherit desktop xdg
 
@@ -13,19 +13,29 @@ APP_NAME="freeplane"
 
 DESCRIPTION="Java application for Mind Mapping, Knowledge and Project Management"
 HOMEPAGE="https://www.freeplane.org/"
-#SRC_URI="mirror://sourceforge/${APP_NAME}/${APP_NAME}%20stable/${APP_NAME}_bin-${PV}.zip"
-SRC_URI="https://downloads.sourceforge.net/project/${APP_NAME}/${APP_NAME}%20stable/archive/${PV}/${APP_NAME}_bin-${PV}.zip"
+SRC_URI="mirror://sourceforge/${APP_NAME}/${APP_NAME}%20stable/${APP_NAME}_bin-${PV}.zip"
+#SRC_URI="https://downloads.sourceforge.net/project/${APP_NAME}/${APP_NAME}%20stable/${PV}/${APP_NAME}_bin-${PV}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="-doc"
 
 S="${WORKDIR}/${APP_NAME}-${PV}"
 
 RDEPEND=">=virtual/jre-1.8"
 DEPEND="
 	app-arch/unzip"
+
+src_prepare() {
+
+	if ! use doc ; then
+		rm -rf $S/doc/api
+	fi
+
+	default
+
+}
 
 src_install() {
 	sed -e "/freepath=/s:=.*:=${EROOT}opt/${APP_NAME}:" \

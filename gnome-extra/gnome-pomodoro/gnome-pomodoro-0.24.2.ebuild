@@ -15,7 +15,7 @@ RESTRICT="mirror"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 RDEPEND="
 	 >=dev-libs/glib-2.38.0:2

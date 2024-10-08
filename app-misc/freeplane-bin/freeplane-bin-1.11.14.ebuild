@@ -34,7 +34,7 @@ src_prepare() {
 }
 
 src_install() {
-	sed -e "/freepath=/s:=.*:=${EROOT}opt/${APP_NAME}:" \
+	sed -e "/freepath=/s:=.*:=${EROOT}/opt/${APP_NAME}:" \
 		-i freeplane.sh
 	newbin freeplane.sh freeplane
 

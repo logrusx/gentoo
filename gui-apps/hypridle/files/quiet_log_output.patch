@@ -1,0 +1,11 @@
+--- a/systemd/hypridle.service.in	2025-01-28 23:06:20.935517131 +0200
++++ b/systemd/hypridle.service.in	2025-01-28 23:06:35.831343632 +0200
+@@ -7,7 +7,7 @@ ConditionEnvironment=WAYLAND_DISPLAY
+ 
+ [Service]
+ Type=simple
+-ExecStart=@CMAKE_INSTALL_PREFIX@/bin/hypridle
++ExecStart=@CMAKE_INSTALL_PREFIX@/bin/hypridle -q
+ Restart=on-failure
+ 
+ [Install]

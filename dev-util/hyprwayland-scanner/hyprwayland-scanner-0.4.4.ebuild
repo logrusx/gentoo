@@ -8,13 +8,8 @@ inherit cmake toolchain-funcs
 DESCRIPTION="A Hyprland implementation of wayland-scanner, in and for C++"
 HOMEPAGE="https://github.com/hyprwm/hyprwayland-scanner/"
 
-if [[ ${PV} == 9999 ]] ; then
-	EGIT_REPO_URI="https://github.com/hyprwm/hyprwayland-scanner.git"
-	inherit git-r3
-else
-	SRC_URI="https://github.com/hyprwm/hyprwayland-scanner/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
-	KEYWORDS="amd64"
-fi
+SRC_URI="https://github.com/hyprwm/hyprwayland-scanner/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+KEYWORDS="~amd64"
 
 LICENSE="BSD"
 SLOT="0"

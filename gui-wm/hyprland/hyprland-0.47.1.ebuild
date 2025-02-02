@@ -11,7 +11,8 @@ HOMEPAGE="https://github.com/hyprwm/Hyprland"
 SRC_URI="https://github.com/hyprwm/${PN^}/releases/download/v${PV}/source-v${PV}.tar.gz -> ${P}.gh.tar.gz"
 S="${WORKDIR}/${PN}-source"
 
-KEYWORDS="~amd64"
+# It turns out 0.47.1 suffers from numerous bugs
+#KEYWORDS="~amd64"
 
 LICENSE="BSD"
 SLOT="0"

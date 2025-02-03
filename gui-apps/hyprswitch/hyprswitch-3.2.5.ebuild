@@ -261,7 +261,12 @@ KEYWORDS="~amd64"
 IUSE="+gui"
 
 # https://github.com/H3rmt/hyprswitch/issues/33
-DEPEND="gui-libs/gtk4-layer-shell"
+DEPEND="gui-libs/gtk4-layer-shell
+ dev-libs/glib:2
+ gui-libs/gtk:4
+ x11-libs/pango
+"
+
 RDEPEND="${DEPEND}"
 BDEPEND="virtual/pkgconfig"
 

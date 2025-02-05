@@ -84,6 +84,11 @@ pkg_setup() {
 	fi
 }
 
+src_prepare() {
+	default
+	echo "" > scripts/generateVersion.sh
+}
+
 src_configure() {
 	local emesonargs=(
 		$(meson_feature legacy-renderer legacy_renderer)

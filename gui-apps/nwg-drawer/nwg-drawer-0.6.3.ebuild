@@ -21,7 +21,7 @@ DEPEND="x11-misc/xdg-utils
 "
 RDEPEND="${DEPEND}
 	"
-BDEPEND="dev-lang/go"
+BDEPEND=""
 
 
 src_compile() {

@@ -1,0 +1,14 @@
+BDEPEND=virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile configure install postinst test unpack
+DEPEND=>=gui-wm/hyprland-0.47
+DESCRIPTION=Workspace overview plugin for Hyprland simlar to Gnome and KDE Plasma
+EAPI=8
+HOMEPAGE=https://github.com/KZDKM/Hyprspace
+INHERIT=meson git-r3
+KEYWORDS=~amd64
+LICENSE=GPL
+PROPERTIES=live
+RDEPEND=>=gui-wm/hyprland-0.47 x11-libs/pixman x11-libs/libdrm
+SLOT=0
+_eclasses_=toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536	multilib	b2a329026f2e404e9e371097dda47f96	flag-o-matic	357f1a896fbedcd06e5ce55419c49eb9	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	python-utils-r1	42c5abe4a656a4993a06a4fc61dbdd12	meson	99466844dd8d4fcfb07578a76f5a9922	git-r3	875eb471682d3e1f18da124be97dcc81
+_md5_=a6b38564f8774f44cd6bdbcf400122eb

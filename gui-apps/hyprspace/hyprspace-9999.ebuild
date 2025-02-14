@@ -26,7 +26,8 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Standalone Hyprland plugins need to be loaded"
-	elog "manually with 'hyprctl plugin load <absolute path>'"
-	elog "command at startup"
+	elog "Standalone Hyprland plugins need to be loaded manually"
+	elog "with 'hyprctl plugin load <absolute path>' command or"
+	elog "with 'plugin <absolute path>' entry in hyprland.conf."
+	elog "Alternatively use hyprpm for local user build."
 }

@@ -18,7 +18,12 @@ DEPEND="gui-libs/gtk:4
 		gui-libs/gtk-layer-shell
 		dev-cpp/gtkmm
 		dev-cpp/glibmm"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+			|| (
+				sys-apps/systemd
+				sys-auth/elogind
+			)
+		"
 BDEPEND="uwsm? ( sys-apps/uwsm )"
 
 src_prepare() {

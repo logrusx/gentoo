@@ -1,17 +1,11 @@
-diff --git a/src/window.cpp b/src/window.cpp
-index 05e878f..bb628aa 100644
---- a/src/window.cpp
-+++ b/src/window.cpp
-@@ -248,8 +248,11 @@ void syspower::on_button_clicked(const std::string& button) {
+--- syspower-9999/src/window.cpp	2025-02-27 21:52:08.605044543 +0200
++++ b/src/window.cpp	2025-02-27 21:55:27.323371336 +0200
+@@ -249,7 +249,7 @@
  		button_text = "Rebooting...";
  	}
  	else if (button == "logout") {
 -		command += " terminate-user $USER";
- 		button_text = "Logging out...";
 +		system("uwsm stop");
-+		for (const auto &window : windows)
-+			window->close();
-+		close();
+ 		button_text = "Logging out...";
  	}
  	else if (button == "suspend") {
- 		button_text = "Suspending...";

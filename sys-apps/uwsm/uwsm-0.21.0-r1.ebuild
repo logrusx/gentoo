@@ -12,7 +12,7 @@ SRC_URI="https://github.com/Vladimir-csp/${PN}/archive/refs/tags/v${PV}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+dbus-broker +uuctl +uwsm-app"
+IUSE="+dbus-broker +uwsm-app"
 
 DEPEND="
 		dev-python/pydbus
@@ -23,18 +23,6 @@ DEPEND="
 	"
 RDEPEND="${DEPEND}
 		>=dev-lang/python-3.10
-		uuctl? (
-				|| (
-					gui-apps/walker
-					gui-apps/fuzzel
-					gui-apps/wofi
-					x11-misc/rofi
-					gui-apps/tofi
-					dev-libs/bemenu
-					gui-apps/wmenu
-					x11-misc/dmenu
-					)
-				)
 	"
 BDEPEND="
 		virtual/pkgconfig
@@ -42,7 +30,6 @@ BDEPEND="
 
 src_configure() {
 	local emesonargs=(
-		$(meson_feature uuctl uuctl)
 		$(meson_feature uwsm-app uwsm-app)
 	)
 	meson_src_configure

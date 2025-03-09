@@ -1,0 +1,11 @@
+--- a/cargo_home/gentoo/skia-bindings-0.81.0/build_support/platform.rs	2006-07-24 04:21:28.000000000 +0300
++++ b/cargo_home/gentoo/skia-bindings-0.81.0/build_support/platform.rs	2025-02-04 12:16:24.998920654 +0200
+@@ -138,7 +138,7 @@ impl GnArgsBuilder {
+ 
+         if let Some(target) = &self.target_str {
+             let target = format!("--target={target}");
+-            self.cflag(&target);
++            //self.cflag(&target);
+             asmflags.push(target);
+         }
+ 

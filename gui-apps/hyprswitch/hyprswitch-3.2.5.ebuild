@@ -258,7 +258,6 @@ LICENSE="0BSD Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 Boost-1.0 GPL-3+ 
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="+gui"
 
 # https://github.com/H3rmt/hyprswitch/issues/33
 DEPEND="gui-libs/gtk4-layer-shell
@@ -273,9 +272,5 @@ BDEPEND="virtual/pkgconfig"
 QA_FLAGS_IGNORED="usr/bin/${PN}"
 
 src_configure() {
-	local myfeatures=(
-#		$(usev gui)
-		$(usev libadwaita)
-	)
 	cargo_src_configure --no-default-features
 }

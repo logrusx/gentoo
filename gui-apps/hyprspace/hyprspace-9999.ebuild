@@ -13,7 +13,7 @@ LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=">=gui-wm/hyprland-0.47"
+DEPEND=">=gui-wm/hyprland-0.47:="
 RDEPEND="${DEPEND}
 		x11-libs/pixman
 		x11-libs/libdrm

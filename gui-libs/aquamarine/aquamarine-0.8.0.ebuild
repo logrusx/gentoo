@@ -26,7 +26,7 @@ RDEPEND="
 	media-libs/libglvnd
 	media-libs/mesa[opengl]
 	media-libs/libdisplay-info
-	>=dev-libs/libinput-1.26.1:=
+	>=dev-libs/libinput-1.26.0:=
 	>=dev-util/hyprwayland-scanner-0.4.0
 	>=gui-libs/hyprutils-0.5.2:=
 	x11-libs/cairo

@@ -17,14 +17,17 @@ DEPEND="app-arch/unzip"
 RDEPEND=">virtual/jre-1.8"
 
 APP_NAME="Umlet"
+MY_PN="umlet"
 S=${WORKDIR}/${APP_NAME}
-INSTALL_PATH="/opt/${APP_NAME}"
+INSTALL_PATH="${EROOT}/opt/${PN}"
 APP_JAR="umlet.jar"
 
 src_install() {
+	sed -i '/# export UMLET_HOME/,/^$/s|^$|export UMLET_HOME='"${INSTALL_PATH}"'|' umlet.sh || die
+	newbin umlet.sh umlet
 
-	newicon "${S}/img/umlet_logo.png" "${APP_NAME}.png"
-	make_desktop_entry "java -Dsun.java2d.xrender=f -jar ${INSTALL_PATH}/${APP_JAR}" "${APP_NAME}" "${APP_NAME}" "Development"
+	newicon "${S}/img/umlet_logo.png" "${MY_PN}.png"
+	make_desktop_entry "umlet" "${APP_NAME}" "${MY_PN}" "Development" "StartupWMClass=com-baselet-standalone-MainStandalone"
 
 
 	insinto $INSTALL_PATH

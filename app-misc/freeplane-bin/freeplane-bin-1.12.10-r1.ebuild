@@ -39,7 +39,8 @@ src_install() {
 
 	# install icons
 	newicon "${S}/freeplane.png" "${APP_NAME}.png"
-	make_desktop_entry "${APP_NAME}" "Freeplane" "${APP_NAME}" "Education" "MimeType=application/x-mind;"
+	make_desktop_entry "${APP_NAME}" "Freeplane" "${APP_NAME}" "Education" "MimeType=application/x-mind;
+StartupWMClass=org-knopflerfish-framework-BundleThread"
 
 	insinto "/opt/${APP_NAME}"
 	doins framework.jar freeplanelauncher.jar \

@@ -24,7 +24,7 @@ RESTRICT="test"
 RDEPEND="
 	dev-libs/wayland
 	media-libs/mesa[opengl]
-	media-libs/libdisplay-info
+	media-libs/libdisplay-info:=
 	>=dev-libs/libinput-1.26.1
 	>=dev-util/hyprwayland-scanner-0.4.0
 	>=gui-libs/hyprutils-0.2.3:=

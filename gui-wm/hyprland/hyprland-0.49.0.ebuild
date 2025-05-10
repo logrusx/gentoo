@@ -12,10 +12,10 @@ SRC_URI="https://github.com/hyprwm/${PN^}/releases/download/v${PV}/source-v${PV}
 S="${WORKDIR}/${PN}-source"
 
 # It turns out 0.47.1 suffers from numerous bugs
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/48"
 IUSE="X legacy-renderer +qtutils systemd hyprpm"
 
 # hyprpm (hyprland plugin manager) requires the dependencies at runtime
@@ -30,17 +30,15 @@ HYPRPM_RDEPEND="
 RDEPEND="
 	hyprpm? ( ${HYPRPM_RDEPEND} )
 	dev-libs/glaze
-	dev-cpp/tomlplusplus
 	dev-libs/glib:2
-	dev-libs/hyprlang
+	>=dev-libs/hyprlang-0.5.3
 	dev-libs/libinput:=
-	dev-libs/hyprgraphics:=
+	>=dev-libs/hyprgraphics-0.1.1
 	dev-libs/re2:=
-	>=dev-libs/udis86-1.7.2
 	>=dev-libs/wayland-1.22.90
-	>=gui-libs/aquamarine-0.7.1
+	>=gui-libs/aquamarine-0.8.0
 	>=gui-libs/hyprcursor-0.1.9
-	gui-libs/hyprutils:=
+	>=gui-libs/hyprutils-0.5.0:=
 	media-libs/libglvnd
 	media-libs/mesa
 	sys-apps/util-linux
@@ -61,7 +59,7 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 	>=dev-libs/hyprland-protocols-0.4
-	>=dev-libs/wayland-protocols-1.36
+	>=dev-libs/wayland-protocols-1.43
 "
 BDEPEND="
 	hyprpm? ( dev-libs/glaze )
@@ -84,6 +82,11 @@ pkg_setup() {
 		eerror "Please upgrade Clang: emerge -v1 llvm-core/clang"
 		die "Clang version is too old to compile Hyprland!"
 	fi
+}
+
+src_prepare() {
+	default
+	echo "" > scripts/generateVersion.sh
 }
 
 src_configure() {

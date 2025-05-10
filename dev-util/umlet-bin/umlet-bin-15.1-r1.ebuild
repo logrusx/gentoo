@@ -27,7 +27,8 @@ src_install() {
 	newbin umlet.sh umlet
 
 	newicon "${S}/img/umlet_logo.png" "${MY_PN}.png"
-	make_desktop_entry "umlet" "${APP_NAME}" "${MY_PN}" "Development" "StartupWMClass=com-baselet-standalone-MainStandalone"
+	make_desktop_entry "umlet" "${APP_NAME}" "${MY_PN}" "Development" "StartupWMClass=com-baselet-standalone-MainStandalone
+StartupNotify=true"
 
 
 	insinto $INSTALL_PATH

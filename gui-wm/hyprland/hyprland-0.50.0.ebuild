@@ -15,7 +15,7 @@ S="${WORKDIR}/${PN}-source"
 KEYWORDS="~amd64"
 
 LICENSE="BSD"
-SLOT="0/48"
+SLOT="0/50"
 IUSE="X +qtutils systemd hyprpm"
 
 # hyprpm (hyprland plugin manager) requires the dependencies at runtime

@@ -16,20 +16,21 @@ RESTRICT="mirror"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="gnome"
 
 RDEPEND="
-	 >=dev-libs/glib-2.38.0:2
-	 >=x11-libs/gtk+-3.20:3
-	 >=gnome-base/gnome-shell-46
-	 x11-libs/gdk-pixbuf:2
-	 >=dev-libs/gobject-introspection-1.10.0
-	 dev-libs/libpeas:0=
-	 >=dev-libs/gom-0.3
-	 >=media-libs/gstreamer-1.0.10:1.0
-	 >=media-libs/libcanberra-0.30
-	 >=dev-libs/json-glib-1.6.2
-	 dev-db/sqlite:3
-	 x11-libs/cairo"
+	>=dev-libs/glib-2.38.0:2
+	>=x11-libs/gtk+-3.20:3
+	gnome? ( >=gnome-base/gnome-shell-46 )
+	x11-libs/gdk-pixbuf:2
+	>=dev-libs/gobject-introspection-1.10.0
+	dev-libs/libpeas:0=
+	>=dev-libs/gom-0.3
+	>=media-libs/gstreamer-1.0.10:1.0
+	>=media-libs/libcanberra-0.30
+	>=dev-libs/json-glib-1.6.2
+	dev-db/sqlite:3
+	x11-libs/cairo"
 DEPEND="
 	$(vala_depend)
 	dev-util/intltool"

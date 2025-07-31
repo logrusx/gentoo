@@ -8,6 +8,6 @@
 		<remote-id type="github">gnome-pomodoro</remote-id>
 	</upstream>
 	<use>
-		<flag name="appindicator">Build in support for notifications using libayatana appindicator3</flag>
+		<flag name="gnome">Build gnome extension</flag>
 	</use>
 </pkgmetadata>

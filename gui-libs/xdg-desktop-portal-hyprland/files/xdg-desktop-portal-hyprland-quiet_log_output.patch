@@ -1,0 +1,11 @@
+diff '--color=auto' -ru a/contrib/systemd/xdg-desktop-portal-hyprland.service.in b/contrib/systemd/xdg-desktop-portal-hyprland.service.in
+--- a/contrib/systemd/xdg-desktop-portal-hyprland.service.in	2024-12-19 02:48:58.000000000 +0200
++++ b/contrib/systemd/xdg-desktop-portal-hyprland.service.in	2025-07-17 09:35:16.620379571 +0300
+@@ -7,6 +7,6 @@
+ [Service]
+ Type=dbus
+ BusName=org.freedesktop.impl.portal.desktop.hyprland
+-ExecStart=@LIBEXECDIR@/xdg-desktop-portal-hyprland
++ExecStart=@LIBEXECDIR@/xdg-desktop-portal-hyprland -q
+ Restart=on-failure
+ Slice=session.slice

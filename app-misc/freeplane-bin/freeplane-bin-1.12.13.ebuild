@@ -35,11 +35,12 @@ src_prepare() {
 src_install() {
 	sed -e "/freepath=/s:=.*:=${EROOT}/opt/${APP_NAME}:" \
 		-i freeplane.sh
-	newbin freeplane.sh freeplane
 
 	if ! use wayland; then
 		sed -i 's|"\${JAVACMD}" -XX:MaxRAM=20g -XX:MaxRAMPercentage=15.0\\|_JAVA_AWT_WM_NONREPARENTING=1 "\${JAVACMD}" -XX:MaxRAM=20g -XX:MaxRAMPercentage=15.0\\|' freeplane.sh || die
 	fi
+
+	newbin freeplane.sh freeplane
 
 	# install icons
 	newicon "${S}/freeplane.png" "${APP_NAME}.png"

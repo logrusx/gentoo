@@ -24,4 +24,3 @@ RDEPEND="
 	sys-apps/file
 "
 DEPEND="${RDEPEND}"
-

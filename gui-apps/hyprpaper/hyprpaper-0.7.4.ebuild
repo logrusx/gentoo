@@ -6,10 +6,10 @@ EAPI=8
 inherit cmake
 
 DESCRIPTION="Wallpaper utility for Hyprland"
-HOMEPAGE="https://github.com/hyprwm/${PN}"
-SRC_URI="https://github.com/hyprwm/${PN}/archive/refs/tags/v${PV}.tar.gz"
+HOMEPAGE="https://github.com/hyprwm/hyprpaper"
+SRC_URI="https://github.com/hyprwm/hyprpaper/archive/refs/tags/v${PV}.tar.gz -> ${PN}-{$PV}.tar.gz"
 
-LICENSE="BSD-3-clause"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
@@ -26,4 +26,3 @@ DEPEND="
 		"
 
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -1,10 +1,11 @@
 DEFINED_PHASES=compile install
-DEPEND=media-libs/libsdl2 || ( sys-devel/gcc sys-devel/clang )
-DESCRIPTION=Utilities to test and configure joysticks, connect legacy devices to the kernel's input subsystem
+DEPEND=media-libs/libsdl2 || ( sys-devel/gcc llvm-core/clang )
+DESCRIPTION=Configure, connect and test joysticks and legacy devices
 EAPI=8
 HOMEPAGE=https://sourceforge.net/projects/linuxconsole
 KEYWORDS=~amd64
-RDEPEND=media-libs/libsdl2 || ( sys-devel/gcc sys-devel/clang )
+LICENSE=GPL-2
+RDEPEND=media-libs/libsdl2 || ( sys-devel/gcc llvm-core/clang )
 SLOT=0
-SRC_URI=mirror://sourceforge/linuxconsoletools-1.8.1.tar.bz2
-_md5_=dc0ea47f4c55dc98f407327da7337255
+SRC_URI=https://downloads.sourceforge.net/project/linuxconsole/linuxconsoletools-1.8.1.tar.bz2
+_md5_=54b0fc247498e8293d571d16d1f8e334

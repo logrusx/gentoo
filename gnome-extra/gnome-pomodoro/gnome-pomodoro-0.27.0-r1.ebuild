@@ -11,7 +11,6 @@ inherit gnome2 vala meson xdg
 DESCRIPTION="A Pomodoro timer for Gnome"
 HOMEPAGE="http://gnomepomodoro.org"
 SRC_URI="https://github.com/codito/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-RESTRICT="mirror"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -60,4 +59,3 @@ pkg_postrm() {
 	gnome2_schemas_update
 	xdg_pkg_postrm
 }
-

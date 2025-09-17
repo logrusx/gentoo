@@ -12,4 +12,4 @@ RDEPEND=hyprpm? ( app-alternatives/ninja >=dev-build/cmake-3.30 dev-build/meson 
 SLOT=0/50
 SRC_URI=https://github.com/hyprwm/Hyprland/releases/download/v0.51.0/source-v0.51.0.tar.gz -> hyprland-0.51.0.gh.tar.gz
 _eclasses_=toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	python-utils-r1	b7eb9c3a6dc6662368634584aab44a2c	meson	99466844dd8d4fcfb07578a76f5a9922
-_md5_=e4754b47918e9df96f58bde6b6db263f
+_md5_=a2d3b6c55e5631f0ff68c68fac7abb1e

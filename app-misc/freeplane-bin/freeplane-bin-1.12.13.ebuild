@@ -11,12 +11,12 @@ DESCRIPTION="Java application for Mind Mapping, Knowledge and Project Management
 HOMEPAGE="https://www.freeplane.org/"
 SRC_URI="https://downloads.sourceforge.net/project/${APP_NAME}/${APP_NAME}%20stable/archive/${PV}/${APP_NAME}_bin-${PV}.zip"
 
+S="${WORKDIR}/${APP_NAME}-${PV}"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="-doc -wayland"
-
-S="${WORKDIR}/${APP_NAME}-${PV}"
+IUSE="doc wayland"
 
 RDEPEND=">=virtual/jre-11"
 BDEPEND="
@@ -25,7 +25,7 @@ BDEPEND="
 src_prepare() {
 
 	if ! use doc ; then
-		rm -rf $S/doc/api
+		rm -rf "{$S"}/doc/api
 	fi
 
 	default
@@ -33,7 +33,7 @@ src_prepare() {
 }
 
 src_install() {
-	sed -e "/freepath=/s:=.*:=${EROOT}/opt/${APP_NAME}:" \
+	sed -e "/freepath=/s:=.*:=${EPREFIX}/opt/${APP_NAME}:" \
 		-i freeplane.sh
 
 	if ! use wayland; then

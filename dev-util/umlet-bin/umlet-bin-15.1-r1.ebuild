@@ -9,6 +9,11 @@ DESCRIPTION="Free UML Tool for Fast UML Diagrams"
 HOMEPAGE="https://www.umlet.com"
 SRC_URI="https://www.umlet.com/download/umlet_$(ver_rs 1- '_')/umlet-standalone-${PV}.zip"
 
+APP_NAME="Umlet"
+MY_PN="umlet"
+S=${WORKDIR}/${APP_NAME}
+APP_JAR="umlet.jar"
+
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -16,22 +21,15 @@ KEYWORDS="~amd64"
 DEPEND="app-arch/unzip"
 RDEPEND=">virtual/jre-1.8"
 
-APP_NAME="Umlet"
-MY_PN="umlet"
-S=${WORKDIR}/${APP_NAME}
-INSTALL_PATH="${EROOT}/opt/${PN}"
-APP_JAR="umlet.jar"
-
 src_install() {
-	sed -i '/# export UMLET_HOME/,/^$/s|^$|export UMLET_HOME='"${INSTALL_PATH}"'|' umlet.sh || die
+	sed -i '/# export UMLET_HOME/,/^$/s|^$|export UMLET_HOME='"${EPREFIX}/opt/${PN}"'|' umlet.sh || die
 	newbin umlet.sh umlet
 
 	newicon "${S}/img/umlet_logo.png" "${MY_PN}.png"
 	make_desktop_entry "umlet" "${APP_NAME}" "${MY_PN}" "Development" "StartupWMClass=com-baselet-standalone-MainStandalone
 StartupNotify=true"
 
-
-	insinto $INSTALL_PATH
+	insinto /opt/${PN}
 	doins $APP_JAR
 
 	doins -r custom_elements img lib palettes

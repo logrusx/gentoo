@@ -3,25 +3,24 @@
 
 EAPI=8
 
-DESCRIPTION="Utilities to test and configure joysticks, connect legacy devices to the kernel's input subsystem"
+DESCRIPTION="Configure, connect and test joysticks and legacy devices"
 
 HOMEPAGE="https://sourceforge.net/projects/linuxconsole"
-SRC_URI="mirror://sourceforge/${PN}-${PV}.tar.bz2"
+SRC_URI="https://downloads.sourceforge.net/project/linuxconsole/${PN}-${PV}.tar.bz2"
 
-LICENSE=""
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="media-libs/libsdl2
 		|| (	sys-devel/gcc
-				sys-devel/clang )"
+				llvm-core/clang )"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_compile() {
 	emake SYSTEMD_SUPPORT=1
 }
 
 src_install() {
-	emake install PREFIX=${EPREFIX}/usr DESTDIR=${D}
+	emake install PREFIX="${EPREFIX}"/usr DESTDIR="${D}"
 }

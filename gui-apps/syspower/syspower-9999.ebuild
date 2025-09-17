@@ -9,7 +9,7 @@ DESCRIPTION="A basic power menu and shutdown screen written in gtkmm4"
 HOMEPAGE="https://github.com/System64fumo/syspower"
 EGIT_REPO_URI="https://github.com/System64fumo/syspower.git"
 
-LICENSE=""
+LICENSE="WTFPL"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="uwsm"

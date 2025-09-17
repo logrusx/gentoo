@@ -25,4 +25,3 @@ RDEPEND="
 	x11-libs/pixman
 "
 DEPEND="${RDEPEND}"
-

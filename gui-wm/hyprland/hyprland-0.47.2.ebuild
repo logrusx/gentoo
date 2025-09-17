@@ -12,10 +12,10 @@ SRC_URI="https://github.com/hyprwm/${PN^}/releases/download/v${PV}/source-v${PV}
 S="${WORKDIR}/${PN}-source"
 
 # It turns out 0.47.1 suffers from numerous bugs
-KEYWORDS="~amd64"
-
 LICENSE="BSD"
 SLOT="0"
+KEYWORDS="~amd64"
+
 IUSE="X legacy-renderer +qtutils systemd hyprpm"
 
 # hyprpm (hyprland plugin manager) requires the dependencies at runtime
@@ -29,7 +29,6 @@ HYPRPM_RDEPEND="
 "
 RDEPEND="
 	hyprpm? ( ${HYPRPM_RDEPEND} )
-	dev-libs/glaze
 	dev-libs/glib:2
 	dev-libs/hyprlang
 	dev-libs/libinput:=
@@ -62,7 +61,7 @@ DEPEND="
 	>=dev-libs/wayland-protocols-1.36
 "
 BDEPEND="
-	hyprpm? ( dev-libs/glaze )
+	hyprpm? ( dev-cpp/glaze )
 	|| ( >=sys-devel/gcc-14:* >=llvm-core/clang-18:* )
 	app-misc/jq
 	dev-build/cmake

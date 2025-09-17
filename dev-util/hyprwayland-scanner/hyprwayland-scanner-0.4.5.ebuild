@@ -7,12 +7,11 @@ inherit cmake toolchain-funcs
 
 DESCRIPTION="A Hyprland implementation of wayland-scanner, in and for C++"
 HOMEPAGE="https://github.com/hyprwm/hyprwayland-scanner/"
-
 SRC_URI="https://github.com/hyprwm/hyprwayland-scanner/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
-KEYWORDS="~amd64"
 
 LICENSE="BSD"
 SLOT="0"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-libs/pugixml-1.14"
 DEPEND="${RDEPEND}"

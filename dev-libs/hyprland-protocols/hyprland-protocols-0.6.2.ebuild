@@ -9,10 +9,9 @@ DESCRIPTION="Wayland protocol extensions for Hyprland"
 HOMEPAGE="https://github.com/hyprwm/hyprland-protocols"
 
 SRC_URI="https://github.com/hyprwm/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
-KEYWORDS="~amd64"
-
 LICENSE="BSD"
 SLOT="0"
+KEYWORDS="~amd64"
 
 BDEPEND="
 	dev-util/wayland-scanner

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<maintainer type="person">
-<email></email>
-</maintainer>
-<longdescription>UWSM wraps standalone Wayland compositors into a set of Systemd units on the fly</longdescription>
+	<upstream>
+		<remote-id type="github">Vladimir-csp/uwsm</remote-id>
+	</upstream>
+	<longdescription>UWSM wraps standalone Wayland compositors into a set of Systemd units on the fly</longdescription>
+	<use>
+		<flag name="dbus-broker">Use sys-apps/dbus-broker as the D-Bus daemon implementation</flag>
+		<flag name="uwsm-app">A drop-in replacement of 'uwsm app' shell client to app-daemon feature of uwsm</flag>
+	</use>
 </pkgmetadata>

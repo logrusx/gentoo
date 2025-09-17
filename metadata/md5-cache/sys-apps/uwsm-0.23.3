@@ -1,15 +1,16 @@
 BDEPEND=virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-DEFINED_PHASES=compile configure install test
+DEFINED_PHASES=compile configure install setup test
 DEPEND=dev-python/pydbus dev-python/pyxdg sys-apps/dbus dbus-broker? ( sys-apps/dbus-broker ) app-text/scdoc
 DESCRIPTION=Universal Wayland Session Manager
 EAPI=8
 HOMEPAGE=https://github.com/Vladimir-csp/uwsm
-INHERIT=meson
-IUSE=+dbus-broker +uwsm-app
+INHERIT=meson python-single-r1
+IUSE=+dbus-broker +uwsm-app python_single_target_python3_11 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
 KEYWORDS=~amd64
 LICENSE=MIT
-RDEPEND=dev-python/pydbus dev-python/pyxdg sys-apps/dbus dbus-broker? ( sys-apps/dbus-broker ) app-text/scdoc >=dev-lang/python-3.10
+RDEPEND=dev-python/pydbus dev-python/pyxdg sys-apps/dbus dbus-broker? ( sys-apps/dbus-broker ) app-text/scdoc python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) python_single_target_python3_13? ( dev-lang/python:3.13 ) python_single_target_python3_14? ( dev-lang/python:3.14 ) >=dev-lang/python-3.10
+REQUIRED_USE=^^ ( python_single_target_python3_11 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 )
 SLOT=0
-SRC_URI=https://github.com/Vladimir-csp/uwsm/archive/refs/tags/v0.23.3.tar.gz
-_eclasses_=toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	python-utils-r1	b7eb9c3a6dc6662368634584aab44a2c	meson	99466844dd8d4fcfb07578a76f5a9922
-_md5_=7be2e614989e0d30526d50e91540ecd1
+SRC_URI=https://github.com/Vladimir-csp/uwsm/archive/refs/tags/v0.23.3.tar.gz -> uwsm-0.23.3.tar.gz
+_eclasses_=toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	python-utils-r1	b7eb9c3a6dc6662368634584aab44a2c	meson	99466844dd8d4fcfb07578a76f5a9922	python-single-r1	47d8ac9be330c9366112b78fd4f8ce57
+_md5_=b1ec16c2c841964b45cfe6b43cb32564

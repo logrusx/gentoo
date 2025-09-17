@@ -5,9 +5,9 @@ EAPI=8
 
 DESCRIPTION="Output simple text to a wayland desktop widget"
 HOMEPAGE="https://git.sr.ht/~proycon/wayout"
-SRC_URI="https://git.sr.ht/~proycon/${PN}/archive/${PV}.tar.gz"
+SRC_URI="https://git.sr.ht/~proycon/${PN}/archive/${PV}.tar.gz -> ${PN}-${PV}.tar.gz"
 
-LICENSE="GPLv3"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 

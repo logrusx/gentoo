@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="app-arch/unzip"
-RDEPEND=">virtual/jre-1.8"
+RDEPEND=">=virtual/jre-1.8"
 
 src_install() {
 	sed -i '/# export UMLET_HOME/,/^$/s|^$|export UMLET_HOME='"${EPREFIX}/opt/${PN}"'|' umlet.sh || die

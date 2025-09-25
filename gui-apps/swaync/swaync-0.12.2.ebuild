@@ -45,7 +45,7 @@ RDEPEND="
 BDEPEND="
 	${PYTHON_DEPS}
 	$(vala_depend)
-	>app-text/scdoc-1.9.2
+	>=app-text/scdoc-1.9.2
 "
 
 BUILD_DIR="${S}/build"

@@ -5,7 +5,7 @@
 		GNOME Pomodoro is a small application that helps managing time according to Pomodoro Technique. It intends to improve productivity and focus by taking short breaks. It uses GNOME technologies, and so it has complete integration with the GNOME desktop environment.
 	</longdescription>
 	<upstream>
-		<remote-id type="github">gnome-pomodoro</remote-id>
+		<remote-id type="github">gnome-pomodoro/gnome-pomodoro</remote-id>
 	</upstream>
 	<use>
 		<flag name="gnome">Build gnome extension</flag>

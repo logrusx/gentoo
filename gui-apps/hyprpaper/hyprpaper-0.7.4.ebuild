@@ -19,7 +19,7 @@ DEPEND="
 		x11-libs/pango
 		dev-libs/wayland
 		dev-libs/wayland-protocols
-		dev-libs/hyprgraphics
+		dev-libs/hyprgraphics:=
 		>=dev-libs/hyprlang-0.6.0
 		>=gui-libs/hyprutils-0.2.4:=
 		virtual/pkgconfig

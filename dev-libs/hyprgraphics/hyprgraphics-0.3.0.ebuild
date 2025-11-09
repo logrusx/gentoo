@@ -24,5 +24,6 @@ RDEPEND="
 	media-libs/libpng
 	sys-apps/file
 	x11-libs/pixman
+	gnome-base/librsvg:2
 "
 DEPEND="${RDEPEND}"

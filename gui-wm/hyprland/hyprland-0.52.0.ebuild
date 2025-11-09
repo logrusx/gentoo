@@ -12,7 +12,7 @@ SRC_URI="https://github.com/hyprwm/${PN^}/releases/download/v${PV}/source-v${PV}
 S="${WORKDIR}/${PN}-source"
 
 LICENSE="BSD"
-SLOT="0/50"
+SLOT="0"
 KEYWORDS="~amd64"
 
 IUSE="X +guiutils systemd hyprpm"

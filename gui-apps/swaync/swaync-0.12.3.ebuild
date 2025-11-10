@@ -24,15 +24,15 @@ DEPEND="
 	dev-lang/sassc
 	dev-util/blueprint-compiler
 	dev-libs/gobject-introspection
-	>=dev-libs/granite-7.5:=
+	media-libs/graphene
 	>=dev-libs/json-glib-1.0
 	>=dev-libs/libgee-0.20.6:0.8=
 	>=dev-libs/wayland-1.23.0
-	>=gui-libs/gtk-4.16.13[introspection,wayland]
+	gui-libs/gtk:4[introspection,wayland]
 	>=gui-libs/gtk4-layer-shell-1.0.4[introspection,vala]
 	sys-apps/dbus
 	dev-util/wayland-scanner
-	>=gui-libs/libadwaita-1.6.1
+	gui-libs/libadwaita:1
 	pulseaudio? ( media-libs/libpulse )
 	libnotify? ( x11-libs/libnotify )
 	dev-vcs/git
@@ -40,6 +40,7 @@ DEPEND="
 RDEPEND="
 	${DEPEND}
 	sys-apps/systemd
+	dev-libs/granite
 "
 
 BDEPEND="

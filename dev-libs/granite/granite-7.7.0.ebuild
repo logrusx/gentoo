@@ -19,6 +19,7 @@ RDEPEND="
 	>=dev-libs/glib-2.50:2
 	dev-libs/libgee:0.8[introspection]
 	gui-libs/gtk:4[introspection]
+	!dev-libs/granite:7
 "
 
 DEPEND="${RDEPEND}

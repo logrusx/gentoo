@@ -25,3 +25,4 @@ DEPEND="
 	x11-libs/pixman
 "
 RDEPEND="${DEPEND}"
+BDEPEND="dev-cpp/gtest"

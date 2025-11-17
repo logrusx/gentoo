@@ -25,14 +25,17 @@ CRATES="
 	anstyle-query@1.1.4
 	anstyle-wincon@3.0.10
 	anstyle@1.0.11
-	anyhow@1.0.99
+	anyhow@1.0.100
 	arbitrary@1.4.1
 	async-broadcast@0.7.2
 	async-channel@2.5.0
+	async-executor@1.13.3
 	async-io@2.5.0
 	async-lock@3.4.1
 	async-net@2.0.0
+	async-process@2.5.0
 	async-recursion@1.1.1
+	async-signal@0.2.13
 	async-stream-impl@0.3.6
 	async-stream@0.3.6
 	async-task@4.7.1
@@ -50,6 +53,7 @@ CRATES="
 	block-buffer@0.10.4
 	block-buffer@0.11.0-rc.5
 	block-padding@0.3.3
+	block2@0.6.2
 	blocking@1.6.2
 	brotli-decompressor@5.0.0
 	brotli@8.0.2
@@ -87,10 +91,12 @@ CRATES="
 	crypto-common@0.1.6
 	crypto-common@0.2.0-rc.4
 	ctr@0.10.0-rc.1
+	deranged@0.4.0
 	derive_arbitrary@1.4.1
 	derive_more-impl@1.0.0
 	derive_more@1.0.0
 	digest@0.10.7
+	dispatch2@0.3.0
 	dlib@0.5.2
 	document-features@0.2.11
 	downcast-rs@1.2.1
@@ -141,8 +147,8 @@ CRATES="
 	graphene-sys@0.21.1
 	gsk4-sys@0.10.0
 	gsk4@0.10.0
-	gtk4-layer-shell-sys@0.4.0
-	gtk4-layer-shell@0.6.3
+	gtk4-layer-shell-sys@0.5.0
+	gtk4-layer-shell@0.7.1
 	gtk4-macros@0.10.0
 	gtk4-sys@0.10.0
 	gtk4@0.10.0
@@ -157,7 +163,7 @@ CRATES="
 	iana-time-zone@0.1.63
 	image-webp@0.2.0
 	image@0.25.8
-	indexmap@2.10.0
+	indexmap@2.11.4
 	inotify-sys@0.1.5
 	inotify@0.11.0
 	inout@0.1.4
@@ -182,7 +188,8 @@ CRATES="
 	litrs@0.4.2
 	lock_api@0.4.13
 	log@0.4.27
-	lz4_flex@0.11.3
+	lz4_flex@0.11.5
+	mac-notification-sys@0.6.8
 	matchers@0.2.0
 	memchr@2.7.5
 	memoffset@0.9.1
@@ -194,17 +201,23 @@ CRATES="
 	newline-converter@0.3.0
 	nix@0.30.1
 	nom@7.1.3
+	notify-rust@4.11.7
 	notify-types@2.0.0
 	notify@8.2.0
 	nu-ansi-term@0.50.1
 	num-bigint@0.4.6
 	num-complex@0.4.6
+	num-conv@0.1.0
 	num-integer@0.1.46
 	num-iter@0.1.45
 	num-rational@0.4.2
 	num-traits@0.2.19
 	num@0.4.3
 	numtoa@0.1.0
+	objc2-core-foundation@0.3.2
+	objc2-encode@4.1.0
+	objc2-foundation@0.3.2
+	objc2@0.6.3
 	object@0.32.2
 	once_cell@1.21.3
 	once_cell_polyfill@1.70.1
@@ -230,6 +243,7 @@ CRATES="
 	polling@3.10.0
 	poly1305@0.9.0-rc.2
 	polyval@0.7.0-rc.2
+	powerfmt@0.2.0
 	ppv-lite86@0.2.21
 	proc-macro-crate@3.3.0
 	proc-macro2@1.0.95
@@ -264,14 +278,15 @@ CRATES="
 	scoped-tls@1.0.1
 	scopeguard@1.2.0
 	secret-service@5.1.0
-	semver@1.0.26
-	serde@1.0.219
-	serde_derive@1.0.219
+	semver@1.0.27
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
 	serde_json5@0.2.1
-	serde_json@1.0.143
+	serde_json@1.0.145
 	serde_repr@0.1.20
 	serde_spanned@0.6.9
-	serde_spanned@1.0.0
+	serde_spanned@1.0.3
 	sha2@0.10.9
 	sharded-slab@0.1.7
 	shlex@1.3.0
@@ -289,6 +304,7 @@ CRATES="
 	syn@2.0.104
 	system-deps@7.0.5
 	target-lexicon@0.13.2
+	tauri-winrt-notification@0.7.2
 	tempfile@3.20.0
 	termion@2.0.3
 	test-log-macros@0.2.18
@@ -296,21 +312,23 @@ CRATES="
 	thiserror-impl@2.0.12
 	thiserror@2.0.12
 	thread_local@1.1.9
+	time-core@0.1.4
+	time@0.3.41
 	tokio-macros@2.5.0
 	tokio@1.47.1
 	toml@0.8.23
-	toml@0.9.5
+	toml@0.9.8
 	toml_datetime@0.6.11
-	toml_datetime@0.7.0
+	toml_datetime@0.7.3
 	toml_edit@0.22.27
-	toml_parser@1.0.2
-	toml_writer@1.0.2
+	toml_parser@1.0.4
+	toml_writer@1.0.4
 	tracing-attributes@0.1.30
 	tracing-core@0.1.34
 	tracing-subscriber@0.3.20
 	tracing@0.1.41
 	tree_magic_mini@3.2.0
-	twox-hash@1.6.3
+	twox-hash@2.1.2
 	typenum@1.18.0
 	ucd-trie@0.1.7
 	uds_windows@1.1.0
@@ -346,18 +364,25 @@ CRATES="
 	winapi-util@0.1.9
 	winapi-x86_64-pc-windows-gnu@0.4.0
 	winapi@0.3.9
+	windows-collections@0.2.0
 	windows-core@0.61.2
+	windows-future@0.2.1
 	windows-implement@0.60.0
 	windows-interface@0.59.1
 	windows-link@0.1.3
 	windows-link@0.2.1
+	windows-numerics@0.2.0
 	windows-result@0.3.4
 	windows-strings@0.4.2
 	windows-sys@0.52.0
 	windows-sys@0.59.0
 	windows-sys@0.60.2
+	windows-sys@0.61.2
 	windows-targets@0.52.6
 	windows-targets@0.53.3
+	windows-threading@0.1.0
+	windows-version@0.1.7
+	windows@0.61.3
 	windows_aarch64_gnullvm@0.52.6
 	windows_aarch64_gnullvm@0.53.0
 	windows_aarch64_msvc@0.52.6
@@ -374,7 +399,7 @@ CRATES="
 	windows_x86_64_gnullvm@0.53.0
 	windows_x86_64_msvc@0.52.6
 	windows_x86_64_msvc@0.53.0
-	winnow@0.7.12
+	winnow@0.7.13
 	wit-bindgen@0.45.1
 	xml-rs@0.8.27
 	zbus@5.11.0

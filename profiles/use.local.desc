@@ -1,0 +1,12 @@
+# This file is deprecated as per GLEP 56 in favor of metadata.xml.
+# Please add your descriptions to your package's metadata.xml ONLY.
+# * generated automatically using pmaint *
+
+dev-libs/granite:demo - Install demo application
+gnome-extra/gnome-pomodoro:gnome - Build gnome extension
+gui-apps/syspower:uwsm - enable sys-apps/uwsm integration
+gui-libs/xdg-desktop-portal-hyprland:elogind - Enable support for rootless session via elogind
+gui-wm/hyprland:guiutils - Install Hyprland QT utility apps
+gui-wm/hyprland:hyprpm - Enable plugin management from within Hyprland
+sys-apps/uwsm:dbus-broker - Use sys-apps/dbus-broker as the D-Bus daemon implementation
+sys-apps/uwsm:uwsm-app - A drop-in replacement of 'uwsm app' shell client to app-daemon feature of uwsm

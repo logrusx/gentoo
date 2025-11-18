@@ -36,10 +36,13 @@ DEPEND="
 	pulseaudio? ( media-libs/libpulse )
 	libnotify? ( x11-libs/libnotify )
 	dev-vcs/git
+	x11-libs/cairo
+	x11-libs/gdk-pixbuf:2
+	x11-libs/pango
 "
 RDEPEND="
 	${DEPEND}
-	sys-apps/systemd
+	virtual/udev
 	dev-libs/granite
 "
 

@@ -266,13 +266,15 @@ RDEPEND="
 	gui-libs/gtk:4
 	x11-libs/pango
 	sys-apps/dbus
-	sys-apps/systemd:=
+	virtual/udev
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
 	app-alternatives/ninja
 	dev-lang/sassc
 "
+	#
+	# openrc?	( sys-auth/elogind:= )
 
 # Rust
 QA_FLAGS_IGNORED="usr/bin/${PN}-client usr/bin/${PN}-libinput-backend usr/bin/${PN}-server"

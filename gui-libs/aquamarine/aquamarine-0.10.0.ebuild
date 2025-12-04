@@ -17,7 +17,7 @@ else
 fi
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/9"
 
 # Upstream states that the simpleWindow test is broken, see bug 936653
 RESTRICT="test"
@@ -28,7 +28,7 @@ RDEPEND="
 	media-libs/libdisplay-info:=
 	>=dev-libs/libinput-1.26.0:=
 	>=dev-util/hyprwayland-scanner-0.4.0
-	>=gui-libs/hyprutils-0.5.2:=
+	>=gui-libs/hyprutils-0.10.3:=
 	x11-libs/cairo
 	x11-libs/libxkbcommon
 	x11-libs/libdrm

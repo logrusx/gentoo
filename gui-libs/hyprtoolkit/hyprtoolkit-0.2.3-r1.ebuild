@@ -15,10 +15,10 @@ KEYWORDS="~amd64"
 
 DEPEND="
 	>=dev-libs/hyprlang-0.6.0
-	>=dev-libs/hyprgraphics-0.3.0
+	>=dev-libs/hyprgraphics-0.3.0:=
 	dev-libs/glib:2
 	>=dev-libs/wayland-1.22.90
-	>=gui-libs/aquamarine-0.9.5
+	>=gui-libs/aquamarine-0.9.5:=
 	>=gui-libs/hyprutils-0.9.0:=
 	dev-libs/iniparser:=
 	media-libs/libglvnd

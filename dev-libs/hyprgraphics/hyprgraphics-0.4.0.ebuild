@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/hyprwm/hyprgraphics"
 SRC_URI="https://github.com/hyprwm/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="GPL-3"
-SLOT="0"
+SLOT="0/3"
 KEYWORDS="~amd64"
 
 RDEPEND="

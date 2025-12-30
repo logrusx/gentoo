@@ -25,13 +25,10 @@ DEPEND="
 	>=dev-cpp/sdbus-c++-2.0.0:=
 	>=dev-libs/hyprlang-0.2.0
 	>=gui-libs/hyprutils-0.2.6:=
-	dev-libs/inih
 	dev-libs/wayland
 	dev-qt/qtbase:6[gui,widgets]
-	dev-qt/qtwayland:6
 	media-libs/mesa
 	>=media-video/pipewire-1.2.0:=
-	sys-apps/util-linux
 	x11-libs/libdrm
 	|| (
 		sys-libs/basu

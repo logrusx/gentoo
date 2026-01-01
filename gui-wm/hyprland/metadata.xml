@@ -2,7 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<upstream>
-		<changelog>https://github.com/hyprwm/Hyprland/releases</changelog>
 		<doc>https://wiki.hyprland.org/</doc>
 		<bugs-to>https://github.com/hyprwm/Hyprland/issues</bugs-to>
 		<remote-id type="github">hyprwm/Hyprland</remote-id>
@@ -10,5 +9,6 @@
 	<use>
 		<flag name="guiutils">Install Hyprland QT utility apps</flag>
 		<flag name="hyprpm">Enable plugin management from within Hyprland</flag>
+		<flag name="uwsm">Enable UWSM to manage Hyprland session</flag>
 	</use>
 </pkgmetadata>

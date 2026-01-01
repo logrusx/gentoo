@@ -7,19 +7,28 @@ inherit cmake
 
 DESCRIPTION="A modern C++ Wayland-native GUI toolkit"
 HOMEPAGE="https://github.com/hyprwm/hyprtoolkit"
-SRC_URI="https://github.com/hyprwm/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/hyprwm/${PN}.git"
+else
+	SRC_URI="
+		https://github.com/hyprwm/${PN}/archive/refs/tags/v${PV}.tar.gz
+			-> ${P}.gh.tar.gz
+	"
+	KEYWORDS="~amd64"
+fi
 
 LICENSE="BSD"
-SLOT="0"
-KEYWORDS="~amd64"
+SLOT="0/4"
 
 DEPEND="
 	>=dev-libs/hyprlang-0.6.0
 	>=dev-libs/hyprgraphics-0.3.0:=
 	dev-libs/glib:2
 	>=dev-libs/wayland-1.22.90
-	>=gui-libs/aquamarine-0.9.5:=
-	>=gui-libs/hyprutils-0.9.0:=
+	>=gui-libs/aquamarine-0.10.0:=
+	>=gui-libs/hyprutils-0.10.4:=
 	dev-libs/iniparser:=
 	media-libs/libglvnd
 	media-libs/mesa

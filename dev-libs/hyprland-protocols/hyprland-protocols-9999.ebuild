@@ -5,8 +5,8 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION="Official implementation library for the hypr config language"
-HOMEPAGE="https://github.com/hyprwm/hyprlang"
+DESCRIPTION="Wayland protocol extensions for Hyprland"
+HOMEPAGE="https://github.com/hyprwm/hyprland-protocols"
 
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
@@ -19,8 +19,10 @@ else
 	KEYWORDS="~amd64"
 fi
 
-LICENSE="GPL-3"
+LICENSE="BSD"
 SLOT="0"
 
-RDEPEND=">=gui-libs/hyprutils-0.7.1:="
-DEPEND="${RDEPEND}"
+BDEPEND="
+	dev-util/wayland-scanner
+	virtual/pkgconfig
+"

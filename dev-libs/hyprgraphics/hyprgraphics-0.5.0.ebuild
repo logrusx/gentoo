@@ -7,11 +7,20 @@ inherit cmake
 
 DESCRIPTION="Hyprland graphics / resource utilities"
 HOMEPAGE="https://github.com/hyprwm/hyprgraphics"
-SRC_URI="https://github.com/hyprwm/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/hyprwm/${PN}.git"
+else
+	SRC_URI="
+		https://github.com/hyprwm/${PN}/archive/${PV}.tar.gz
+			-> ${P}.gh.tar.gz
+	"
+	KEYWORDS="~amd64"
+fi
 
 LICENSE="GPL-3"
-SLOT="0/3"
-KEYWORDS="~amd64"
+SLOT="0/4"
 
 RDEPEND="
 	>=gui-libs/hyprutils-0.1.1:=

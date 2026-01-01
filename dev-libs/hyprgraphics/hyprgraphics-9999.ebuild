@@ -5,8 +5,8 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION="Official implementation library for the hypr config language"
-HOMEPAGE="https://github.com/hyprwm/hyprlang"
+DESCRIPTION="Hyprland graphics / resource utilities"
+HOMEPAGE="https://github.com/hyprwm/hyprgraphics"
 
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
@@ -20,7 +20,19 @@ else
 fi
 
 LICENSE="GPL-3"
-SLOT="0"
+SLOT="0/4"
 
-RDEPEND=">=gui-libs/hyprutils-0.7.1:="
+RDEPEND="
+	>=gui-libs/hyprutils-0.1.1:=
+	media-libs/libjpeg-turbo:=
+	media-libs/libjxl:=
+	media-libs/libwebp:=
+	sys-apps/file
+	x11-libs/pango
+	x11-libs/cairo
+	media-libs/libpng
+	sys-apps/file
+	x11-libs/pixman
+	gnome-base/librsvg:2
+"
 DEPEND="${RDEPEND}"

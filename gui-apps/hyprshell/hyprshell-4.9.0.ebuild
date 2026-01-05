@@ -8,29 +8,28 @@ EAPI=8
 RUST_MIN_VER="1.87.0"
 
 CRATES="
-	addr2line@0.21.0
 	adler2@2.0.1
-	adler@1.0.2
-	aead@0.6.0-rc.2
-	aes-gcm@0.11.0-rc.1
+	aead@0.6.0-rc.5
+	aes-gcm@0.11.0-rc.2
 	aes@0.8.4
-	aes@0.9.0-rc.1
+	aes@0.9.0-rc.2
 	ahash@0.8.12
-	aho-corasick@1.1.3
+	aho-corasick@1.1.4
 	alloc-no-stdlib@2.0.4
 	alloc-stdlib@0.2.2
 	android_system_properties@0.1.5
-	anstream@0.6.20
+	anstream@0.6.21
 	anstyle-parse@0.2.7
-	anstyle-query@1.1.4
-	anstyle-wincon@3.0.10
-	anstyle@1.0.11
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anstyle@1.0.13
 	anyhow@1.0.100
-	arbitrary@1.4.1
+	arbitrary@1.4.2
+	arrayvec@0.7.6
 	async-broadcast@0.7.2
 	async-channel@2.5.0
 	async-executor@1.13.3
-	async-io@2.5.0
+	async-io@2.6.0
 	async-lock@3.4.1
 	async-net@2.0.0
 	async-process@2.5.0
@@ -42,45 +41,42 @@ CRATES="
 	async-trait@0.1.89
 	atomic-waker@1.1.2
 	autocfg@1.5.0
-	backtrace@0.3.71
-	base64@0.22.1
-	bincode@2.0.1
-	bincode_derive@2.0.1
 	bit-set@0.8.0
 	bit-vec@0.8.0
+	bitcode@0.6.9
+	bitcode_derive@0.6.9
 	bitflags@1.3.2
-	bitflags@2.9.1
+	bitflags@2.10.0
 	block-buffer@0.10.4
-	block-buffer@0.11.0-rc.5
+	block-buffer@0.11.0
 	block-padding@0.3.3
 	block2@0.6.2
 	blocking@1.6.2
 	brotli-decompressor@5.0.0
 	brotli@8.0.2
-	bumpalo@3.19.0
-	bytemuck@1.23.2
+	bumpalo@3.19.1
+	bytemuck@1.24.0
 	byteorder-lite@0.1.0
-	byteorder@1.5.0
-	bytes@1.10.1
-	cairo-rs@0.21.1
-	cairo-sys-rs@0.21.1
+	bytes@1.11.0
+	cairo-rs@0.21.5
+	cairo-sys-rs@0.21.5
 	cbc@0.1.2
-	cc@1.2.32
-	cfg-expr@0.20.2
-	cfg-if@1.0.1
+	cc@1.2.51
+	cfg-expr@0.20.5
+	cfg-if@1.0.4
 	cfg_aliases@0.2.1
-	chacha20@0.10.0-rc.2
-	chacha20poly1305@0.11.0-rc.1
+	chacha20@0.10.0-rc.6
+	chacha20poly1305@0.11.0-rc.2
 	chrono-humanize@0.1.2
 	chrono-tz@0.5.3
 	chrono@0.4.42
 	cipher@0.4.4
-	cipher@0.5.0-rc.1
-	clap@4.5.51
-	clap_builder@4.5.51
-	clap_complete@4.5.60
+	cipher@0.5.0-rc.3
+	clap@4.5.54
+	clap_builder@4.5.54
+	clap_complete@4.5.64
 	clap_derive@4.5.49
-	clap_lex@0.7.5
+	clap_lex@0.7.6
 	color_quant@1.1.0
 	colorchoice@1.0.4
 	concurrent-queue@2.5.0
@@ -88,71 +84,75 @@ CRATES="
 	cpufeatures@0.2.17
 	crc32fast@1.5.0
 	crossbeam-utils@0.8.21
-	crypto-common@0.1.6
-	crypto-common@0.2.0-rc.4
-	ctr@0.10.0-rc.1
+	crypto-common@0.1.7
+	crypto-common@0.2.0-rc.9
+	ctr@0.10.0-rc.2
 	deranged@0.4.0
-	derive_arbitrary@1.4.1
+	derive_arbitrary@1.4.2
 	derive_more-impl@1.0.0
 	derive_more@1.0.0
 	digest@0.10.7
 	dispatch2@0.3.0
 	dlib@0.5.2
-	document-features@0.2.11
+	document-features@0.2.12
 	downcast-rs@1.2.1
-	dyn-clone@1.0.20
 	either@1.15.0
-	endi@1.1.0
+	endi@1.1.1
 	enumflags2@0.7.12
 	enumflags2_derive@0.7.12
 	equivalent@1.0.2
-	errno@0.3.13
+	errno@0.3.14
 	event-listener-strategy@0.5.4
 	event-listener@5.4.1
-	fast_image_resize@5.3.0
+	fast_image_resize@5.5.0
 	fastrand@2.3.0
 	fdeflate@0.3.7
 	field-offset@0.3.6
+	find-msvc-tools@0.1.6
 	fixedbitset@0.4.2
-	flate2@1.1.4
+	flate2@1.1.5
+	flume@0.11.1
 	fnv@1.0.7
+	fragile@2.0.1
 	futures-channel@0.3.31
 	futures-core@0.3.31
 	futures-executor@0.3.31
 	futures-io@0.3.31
 	futures-lite@2.6.1
 	futures-macro@0.3.31
+	futures-sink@0.3.31
 	futures-task@0.3.31
 	futures-util@0.3.31
-	fxhash@0.2.1
-	gdk-pixbuf-sys@0.21.1
-	gdk-pixbuf@0.21.1
-	gdk4-sys@0.10.0
-	gdk4@0.10.0
+	futures@0.3.31
+	gdk-pixbuf-sys@0.21.5
+	gdk-pixbuf@0.21.5
+	gdk4-sys@0.10.3
+	gdk4@0.10.3
 	generic-array@0.14.7
 	getrandom@0.2.16
-	getrandom@0.3.3
-	ghash@0.6.0-rc.2
-	gif@0.13.3
-	gimli@0.28.1
-	gio-sys@0.21.1
-	gio@0.21.1
+	getrandom@0.3.4
+	getrandom@0.4.0-rc.0
+	ghash@0.6.0-rc.3
+	gif@0.14.1
+	gio-sys@0.21.5
+	gio@0.21.5
 	gl@0.14.0
 	gl_generator@0.14.0
-	glib-macros@0.21.0
-	glib-sys@0.21.1
-	glib@0.21.1
-	gobject-sys@0.21.1
-	graphene-rs@0.21.1
-	graphene-sys@0.21.1
-	gsk4-sys@0.10.0
-	gsk4@0.10.0
-	gtk4-layer-shell-sys@0.5.0
+	glam@0.30.9
+	glib-macros@0.21.5
+	glib-sys@0.21.5
+	glib@0.21.5
+	gobject-sys@0.21.5
+	graphene-rs@0.21.5
+	graphene-sys@0.21.5
+	gsk4-sys@0.10.3
+	gsk4@0.10.3
+	gtk4-layer-shell-sys@0.5.2
 	gtk4-layer-shell@0.7.1
-	gtk4-macros@0.10.0
-	gtk4-sys@0.10.0
-	gtk4@0.10.0
-	hashbrown@0.15.5
+	gtk4-macros@0.10.3
+	gtk4-sys@0.10.3
+	gtk4@0.10.3
+	hashbrown@0.16.1
 	heck@0.5.0
 	hermit-abi@0.5.2
 	hex@0.4.3
@@ -160,51 +160,47 @@ CRATES="
 	hmac@0.12.1
 	hybrid-array@0.4.5
 	iana-time-zone-haiku@0.1.2
-	iana-time-zone@0.1.63
+	iana-time-zone@0.1.64
 	image-webp@0.2.0
-	image@0.25.8
+	image@0.25.9
 	indexmap@2.11.4
 	inotify-sys@0.1.5
 	inotify@0.11.0
 	inout@0.1.4
-	inout@0.2.1
-	inquire@0.7.5
-	io-uring@0.7.10
-	is_terminal_polyfill@1.70.1
-	itoa@1.0.15
+	inout@0.2.2
+	is_terminal_polyfill@1.70.2
+	itoa@1.0.17
 	jobserver@0.1.34
-	js-sys@0.3.77
+	js-sys@0.3.83
 	khronos_api@3.1.0
 	kqueue-sys@1.0.4
 	kqueue@1.1.1
 	lazy_static@1.5.0
-	libadwaita-sys@0.8.0
-	libadwaita@0.8.0
-	libc@0.2.174
+	libadwaita-sys@0.8.1
+	libadwaita@0.8.1
+	libc@0.2.179
 	libloading@0.8.9
-	libredox@0.0.2
+	linux-raw-sys@0.11.0
 	linux-raw-sys@0.4.15
-	linux-raw-sys@0.9.4
-	litrs@0.4.2
-	lock_api@0.4.13
-	log@0.4.27
-	lz4_flex@0.11.5
-	mac-notification-sys@0.6.8
+	litrs@1.0.0
+	lock_api@0.4.14
+	log@0.4.29
+	lz4_flex@0.12.0
+	mac-notification-sys@0.6.9
 	matchers@0.2.0
-	memchr@2.7.5
+	memchr@2.7.6
 	memoffset@0.9.1
 	minimal-lexical@0.2.1
-	miniz_oxide@0.7.4
 	miniz_oxide@0.8.9
-	mio@1.0.4
-	moxcms@0.7.5
-	newline-converter@0.3.0
+	mio@1.1.1
+	moxcms@0.7.11
+	nanorand@0.7.0
 	nix@0.30.1
 	nom@7.1.3
 	notify-rust@4.11.7
 	notify-types@2.0.0
 	notify@8.2.0
-	nu-ansi-term@0.50.1
+	nu-ansi-term@0.50.3
 	num-bigint@0.4.6
 	num-complex@0.4.6
 	num-conv@0.1.0
@@ -213,67 +209,67 @@ CRATES="
 	num-rational@0.4.2
 	num-traits@0.2.19
 	num@0.4.3
-	numtoa@0.1.0
 	objc2-core-foundation@0.3.2
 	objc2-encode@4.1.0
 	objc2-foundation@0.3.2
 	objc2@0.6.3
-	object@0.32.2
 	once_cell@1.21.3
-	once_cell_polyfill@1.70.1
+	once_cell_polyfill@1.70.2
 	ordered-stream@0.2.0
-	os_pipe@1.2.2
-	pango-sys@0.21.1
-	pango@0.21.1
+	os_pipe@1.2.3
+	pango-sys@0.21.5
+	pango@0.21.5
 	parking@2.2.1
-	parking_lot@0.12.4
-	parking_lot_core@0.9.11
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
 	parse-zoneinfo@0.3.1
 	paste@1.0.15
-	pest@2.8.1
-	pest_derive@2.8.1
-	pest_generator@2.8.1
-	pest_meta@2.8.1
+	pest@2.8.0
+	pest_derive@2.8.0
+	pest_generator@2.8.0
+	pest_meta@2.8.0
 	petgraph@0.6.5
 	pin-project-lite@0.2.16
 	pin-utils@0.1.0
 	piper@0.2.4
 	pkg-config@0.3.32
 	png@0.18.0
-	polling@3.10.0
-	poly1305@0.9.0-rc.2
-	polyval@0.7.0-rc.2
+	polling@3.11.0
+	poly1305@0.9.0-rc.3
+	polyval@0.7.0-rc.3
 	powerfmt@0.2.0
 	ppv-lite86@0.2.21
-	proc-macro-crate@3.3.0
-	proc-macro2@1.0.95
+	proc-macro-crate@3.4.0
+	proc-macro2@1.0.104
 	proptest-derive@0.5.1
 	proptest@1.8.0
-	pxfm@0.1.24
+	pxfm@0.1.27
 	quick-error@1.2.3
 	quick-error@2.0.1
 	quick-xml@0.37.5
-	quote@1.0.40
+	quick-xml@0.38.4
+	quote@1.0.42
 	r-efi@5.3.0
 	rand@0.9.2
 	rand_chacha@0.9.0
+	rand_core@0.10.0-rc-3
 	rand_core@0.9.3
 	rand_xorshift@0.4.0
-	redox_syscall@0.4.1
-	redox_syscall@0.5.17
-	redox_termios@0.1.3
-	regex-automata@0.4.9
-	regex-syntax@0.8.5
-	regex@1.11.2
+	redox_syscall@0.5.18
+	regex-automata@0.4.13
+	regex-syntax@0.8.8
+	regex@1.12.2
+	relm4-components@0.10.0
+	relm4-css@0.10.0
+	relm4-macros@0.10.0
+	relm4@0.10.0
 	rink-core@0.8.0
-	ron@0.11.0
-	rustc-demangle@0.1.26
+	ron@0.12.0
 	rustc_version@0.4.1
 	rustix@0.38.44
-	rustix@1.0.8
+	rustix@1.1.3
 	rustversion@1.0.22
-	rusty-fork@0.3.0
-	ryu@1.0.20
+	rusty-fork@0.3.1
 	same-file@1.0.6
 	scoped-tls@1.0.1
 	scopeguard@1.2.0
@@ -283,138 +279,138 @@ CRATES="
 	serde_core@1.0.228
 	serde_derive@1.0.228
 	serde_json5@0.2.1
-	serde_json@1.0.145
+	serde_json@1.0.148
 	serde_repr@0.1.20
 	serde_spanned@0.6.9
-	serde_spanned@1.0.3
+	serde_spanned@1.0.1
 	sha2@0.10.9
 	sharded-slab@0.1.7
 	shlex@1.3.0
-	signal-hook-registry@1.4.6
-	signal-hook@0.3.18
-	simd-adler32@0.3.7
+	signal-hook-registry@1.4.8
+	signal-hook@0.4.1
+	simd-adler32@0.3.8
 	slab@0.4.11
 	smallvec@1.15.1
 	smart-default@0.7.1
-	socket2@0.6.0
+	socket2@0.6.1
+	spin@0.9.8
 	static_assertions@1.1.0
 	strsim@0.10.0
 	strsim@0.11.1
 	subtle@2.6.1
-	syn@2.0.104
-	system-deps@7.0.5
-	target-lexicon@0.13.2
+	syn@2.0.113
+	system-deps@7.0.4
+	target-lexicon@0.13.3
 	tauri-winrt-notification@0.7.2
-	tempfile@3.20.0
-	termion@2.0.3
-	test-log-macros@0.2.18
-	test-log@0.2.18
-	thiserror-impl@2.0.12
-	thiserror@2.0.12
+	tempfile@3.24.0
+	test-log-macros@0.2.19
+	test-log@0.2.19
+	thiserror-impl@2.0.17
+	thiserror@2.0.17
 	thread_local@1.1.9
 	time-core@0.1.4
 	time@0.3.41
-	tokio-macros@2.5.0
-	tokio@1.47.1
+	tokio-macros@2.6.0
+	tokio@1.49.0
 	toml@0.8.23
-	toml@0.9.8
+	toml@0.9.6
 	toml_datetime@0.6.11
-	toml_datetime@0.7.3
+	toml_datetime@0.7.1
 	toml_edit@0.22.27
-	toml_parser@1.0.4
-	toml_writer@1.0.4
-	tracing-attributes@0.1.30
-	tracing-core@0.1.34
-	tracing-subscriber@0.3.20
-	tracing@0.1.41
+	toml_edit@0.23.5
+	toml_parser@1.0.2
+	toml_writer@1.0.2
+	tracing-attributes@0.1.31
+	tracing-core@0.1.36
+	tracing-subscriber@0.3.22
+	tracing@0.1.44
+	tracker-macros@0.2.2
+	tracker@0.2.2
 	tree_magic_mini@3.2.0
 	twox-hash@2.1.2
-	typenum@1.18.0
+	typeid@1.0.3
+	typenum@1.19.0
 	ucd-trie@0.1.7
 	uds_windows@1.1.0
 	unarray@0.1.4
-	unicode-ident@1.0.18
-	unicode-segmentation@1.12.0
-	unicode-width@0.1.14
+	unicode-ident@1.0.22
 	unicode-xid@0.2.6
-	universal-hash@0.6.0-rc.2
-	unty@0.0.4
+	universal-hash@0.6.0-rc.4
 	utf8parse@0.2.2
-	version-compare@0.2.0
+	uuid@1.19.0
+	version-compare@0.2.1
 	version_check@0.9.5
-	virtue@0.0.18
 	wait-timeout@0.2.1
 	walkdir@2.5.0
 	wasi@0.11.1+wasi-snapshot-preview1
-	wasi@0.14.4+wasi-0.2.4
-	wasm-bindgen-backend@0.2.100
-	wasm-bindgen-macro-support@0.2.100
-	wasm-bindgen-macro@0.2.100
-	wasm-bindgen-shared@0.2.100
-	wasm-bindgen@0.2.100
-	wayland-backend@0.3.11
-	wayland-client@0.31.11
-	wayland-protocols-wlr@0.3.9
-	wayland-protocols@0.32.9
-	wayland-scanner@0.31.7
-	wayland-server@0.31.10
-	wayland-sys@0.31.7
-	weezl@0.1.10
+	wasip2@1.0.1+wasi-0.2.4
+	wasm-bindgen-macro-support@0.2.106
+	wasm-bindgen-macro@0.2.106
+	wasm-bindgen-shared@0.2.106
+	wasm-bindgen@0.2.106
+	wayland-backend@0.3.12
+	wayland-client@0.31.12
+	wayland-protocols-wlr@0.3.10
+	wayland-protocols@0.32.10
+	wayland-scanner@0.31.8
+	wayland-server@0.31.11
+	wayland-sys@0.31.8
+	weezl@0.1.12
 	winapi-i686-pc-windows-gnu@0.4.0
-	winapi-util@0.1.9
+	winapi-util@0.1.11
 	winapi-x86_64-pc-windows-gnu@0.4.0
 	winapi@0.3.9
 	windows-collections@0.2.0
 	windows-core@0.61.2
 	windows-future@0.2.1
-	windows-implement@0.60.0
-	windows-interface@0.59.1
+	windows-implement@0.60.2
+	windows-interface@0.59.3
 	windows-link@0.1.3
 	windows-link@0.2.1
 	windows-numerics@0.2.0
 	windows-result@0.3.4
 	windows-strings@0.4.2
-	windows-sys@0.52.0
 	windows-sys@0.59.0
 	windows-sys@0.60.2
 	windows-sys@0.61.2
 	windows-targets@0.52.6
-	windows-targets@0.53.3
+	windows-targets@0.53.5
 	windows-threading@0.1.0
 	windows-version@0.1.7
 	windows@0.61.3
 	windows_aarch64_gnullvm@0.52.6
-	windows_aarch64_gnullvm@0.53.0
+	windows_aarch64_gnullvm@0.53.1
 	windows_aarch64_msvc@0.52.6
-	windows_aarch64_msvc@0.53.0
+	windows_aarch64_msvc@0.53.1
 	windows_i686_gnu@0.52.6
-	windows_i686_gnu@0.53.0
+	windows_i686_gnu@0.53.1
 	windows_i686_gnullvm@0.52.6
-	windows_i686_gnullvm@0.53.0
+	windows_i686_gnullvm@0.53.1
 	windows_i686_msvc@0.52.6
-	windows_i686_msvc@0.53.0
+	windows_i686_msvc@0.53.1
 	windows_x86_64_gnu@0.52.6
-	windows_x86_64_gnu@0.53.0
+	windows_x86_64_gnu@0.53.1
 	windows_x86_64_gnullvm@0.52.6
-	windows_x86_64_gnullvm@0.53.0
+	windows_x86_64_gnullvm@0.53.1
 	windows_x86_64_msvc@0.52.6
-	windows_x86_64_msvc@0.53.0
-	winnow@0.7.13
-	wit-bindgen@0.45.1
-	xml-rs@0.8.27
-	zbus@5.11.0
-	zbus_macros@5.11.0
+	windows_x86_64_msvc@0.53.1
+	winnow@0.7.14
+	wit-bindgen@0.46.0
+	xml-rs@0.8.28
+	zbus@5.12.0
+	zbus_macros@5.12.0
 	zbus_names@4.2.0
-	zerocopy-derive@0.8.26
-	zerocopy@0.8.26
-	zip@5.0.0
+	zerocopy-derive@0.8.31
+	zerocopy@0.8.31
+	zip@5.1.1
+	zmij@1.0.10
 	zstd-safe@7.2.4
 	zstd-sys@2.0.16+zstd.1.5.7
 	zstd@0.13.3
-	zune-core@0.4.12
-	zune-jpeg@0.4.21
-	zvariant@5.7.0
-	zvariant_derive@5.7.0
+	zune-core@0.5.0
+	zune-jpeg@0.5.7
+	zvariant@5.8.0
+	zvariant_derive@5.8.0
 	zvariant_utils@3.2.1
 "
 
@@ -440,7 +436,8 @@ KEYWORDS="~amd64"
 # https://github.com/H3rmt/hyprswitch/issues/33
 DEPEND="
 	>=gui-libs/gtk4-layer-shell-1.1.1
-	gui-libs/gtk:4
+	>=gui-libs/gtk-4.20
+	>=gui-libs/libadwaita-1.8
 "
 
 RDEPEND="${DEPEND}"

@@ -9,7 +9,7 @@ APP_NAME="freeplane"
 
 DESCRIPTION="Java application for Mind Mapping, Knowledge and Project Management"
 HOMEPAGE="https://www.freeplane.org/"
-SRC_URI="https://downloads.sourceforge.net/project/${APP_NAME}/${APP_NAME}%20stable/archive/${PV}/${APP_NAME}_bin-${PV}.zip"
+SRC_URI="https://github.com/freeplane/freeplane/releases/download/release-${PV}/freeplane_bin-${PV}.zip"
 
 S="${WORKDIR}/${APP_NAME}-${PV}"
 

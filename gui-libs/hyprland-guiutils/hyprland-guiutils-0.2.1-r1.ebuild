@@ -25,7 +25,7 @@ SLOT="0"
 DEPEND="
 	>=dev-libs/hyprlang-0.6.0
 	>=gui-libs/hyprutils-0.10.2:=
-	>=gui-libs/hyprtoolkit-0.4.0
+	>=gui-libs/hyprtoolkit-0.4.0:=
 	x11-libs/libdrm
 	x11-libs/pixman
 "

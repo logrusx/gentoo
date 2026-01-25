@@ -24,7 +24,7 @@ RDEPEND="
 
 DEPEND="${RDEPEND}
 		>=dev-libs/wayland-protocols-1.35
-		>=gui-libs/hyprtoolkit-0.4.1
+		>=gui-libs/hyprtoolkit-0.4.1:=
 		sys-apps/hyprwire
 		x11-libs/pixman
 		x11-libs/libdrm

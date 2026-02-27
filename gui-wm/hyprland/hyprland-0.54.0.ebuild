@@ -31,7 +31,7 @@ REQUIRED_USE="uwsm? ( systemd )"
 HYPRCTL_COMMON_DEPEND="
 	dev-libs/re2:=
 	>=gui-libs/hyprutils-0.2.4:=
-	sys-apps/hyprwire:=
+	sys-apps/hyprwire:0/3
 "
 
 # hyprpm/CMakeLists.txt
@@ -40,7 +40,7 @@ HYPRPM_COMMON_DEPEND="
 	>=gui-libs/hyprutils-0.7.0:=
 "
 HYPRPM_DEPEND="
-	>=dev-cpp/glaze-6.0.0:=
+	>=dev-cpp/glaze-7.0.0:=
 "
 
 # CMakeLists.txt
@@ -50,7 +50,7 @@ COMMON_DEPEND="
 	hyprpm? ( ${HYPRPM_COMMON_DEPEND} )
 	>=dev-libs/udis86-1.7.2
 	>=gui-libs/hyprutils-0.11.0:=
-	>=dev-libs/wayland-1.22.90
+	>=dev-libs/wayland-1.22.91
 	>=gui-libs/aquamarine-0.9.3:=
 	>=dev-libs/hyprlang-0.6.7
 	>=gui-libs/hyprcursor-0.1.7
@@ -108,11 +108,27 @@ BDEPEND="
 	virtual/pkgconfig
 "
 
+PATCHES=(
+	# remove Nix stuff that's forced on everybody for no reason
+	"${FILESDIR}/hyprland-0.54.0-remove-unnecessary-nix-stuff.patch"
+)
+
 pkg_pretend() {
 	[[ ${MERGE_TYPE} == binary ]] && return
 
 	tc-is-gcc && tc-check-min_ver gcc 15
 	tc-is-clang && tc-check-min_ver clang 20
+}
+
+src_prepare() {
+	# remove forced compiler options
+	sed -i "/add_compile_options(-O3)/d" CMakeLists.txt
+	sed -i "/add_compile_options(-fno-lto)/d" CMakeLists.txt
+	# remove stuff that should not be there first place
+	rm -rf subprojects
+	# remove nix stuff that's not necessary
+	rm -rf nix
+	cmake_src_prepare
 }
 
 src_configure() {

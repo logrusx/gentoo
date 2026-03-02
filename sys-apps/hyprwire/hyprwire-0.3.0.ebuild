@@ -23,5 +23,6 @@ LICENSE="BSD"
 SLOT="0/3"
 
 DEPEND=">=gui-libs/hyprutils-0.9.0
+		dev-libs/pugixml
 		dev-libs/libffi"
 RDEPEND="${DEPEND}"

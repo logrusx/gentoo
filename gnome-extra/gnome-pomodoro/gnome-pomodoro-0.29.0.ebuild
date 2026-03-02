@@ -23,7 +23,7 @@ RDEPEND="
 	gnome? ( >=gnome-base/gnome-shell-46 )
 	x11-libs/gdk-pixbuf:2
 	>=dev-libs/gobject-introspection-1.10.0
-	dev-libs/libpeas:0=
+	dev-libs/libpeas:2=[vala]
 	>=dev-libs/gom-0.3
 	>=media-libs/gstreamer-1.0.10:1.0
 	>=media-libs/libcanberra-0.30
@@ -35,6 +35,8 @@ DEPEND="
 	dev-util/intltool"
 BDEPEND="
 	virtual/pkgconfig"
+
+S="${WORKDIR}/FocusTimer-${PV}"
 
 src_prepare() {
 	vala_setup
@@ -53,6 +55,8 @@ src_compile(){
 pkg_postinst() {
 	gnome2_schemas_update
 	xdg_pkg_postinst
+	elog "Gnome Pomodoro has been renamed to FocusTimer and the next version\n
+of the package will likely be released under that name."
 }
 
 pkg_postrm() {

@@ -16,9 +16,10 @@ SLOT="0/${PV}"
 KEYWORDS="amd64"
 
 RDEPEND="
+	sys-devel/gettext
 	>=dev-libs/glib-2.50:2
 	dev-libs/libgee:0.8[introspection]
-	gui-libs/gtk:4[introspection]
+	>=gui-libs/gtk-4.12:4[introspection]
 	!dev-libs/granite:7
 "
 

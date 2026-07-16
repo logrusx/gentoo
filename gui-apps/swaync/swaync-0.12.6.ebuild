@@ -52,7 +52,7 @@ BDEPEND="
 	>=app-text/scdoc-1.9.2
 "
 
-BUILD_DIR="${S}/build"
+# BUILD_DIR="${S}/build"
 
 src_configure() {
 	local emesonargs=($(meson_use pulseaudio pulse-audio))

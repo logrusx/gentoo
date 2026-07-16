@@ -18,7 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc wayland"
 
-RDEPEND=">=virtual/jre-11"
+RDEPEND="|| (
+				virtual/jre:11
+				virtual/jre:17
+				virtual/jre:21
+			)"
 BDEPEND="
 	app-arch/unzip"
 
@@ -52,4 +56,10 @@ StartupWMClass=org-knopflerfish-framework-BundleThread"
 	doins framework.jar freeplanelauncher.jar \
 		freeplane.policy props.xargs init.xargs *.l4j.ini
 	doins -r core doc plugins resources
+}
+
+pkg_postinst() {
+	ewarn "Freeplane cannot work with Java-25."
+	ewarn "The user should make sure it's running with Java <25"
+	ewarn "https://wiki.gentoo.org/wiki/Java#Configuring_the_Java_Virtual_Machine"
 }

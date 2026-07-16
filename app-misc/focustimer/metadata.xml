@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM 'http://www.gentoo.org/dtd/metadata.dtd'>
+<pkgmetadata>
+	<longdescription>
+		Focus Timer (formerly gnome-pomodoro) is a time-management app built around the Pomodoro Technique, helping you maintain focus and prevent burnout through structured work and break intervals.	</longdescription>
+	<upstream>
+		<remote-id type="github">focustimerhq/FocusTimer</remote-id>
+	</upstream>
+	<use>
+		<flag name="gnome">Build gnome extension</flag>
+		<flag name="kde">Enable KDE-specific integration behavior</flag>
+		<flag name="xfce">Enable XFCE-specific integration behavior</flag>
+		<flag name="sni">Enable Status Notifier Item notifications</flag>
+		<flag name="automation">Enable events automation</flag>
+	</use>
+</pkgmetadata>

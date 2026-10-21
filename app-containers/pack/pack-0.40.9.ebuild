@@ -23,7 +23,7 @@ BDEPEND="${BDEPEND}
 "
 
 src_compile() {
-	ego build
+	ego build -ldflags "-X github.com/buildpacks/pack/pkg/client.Version=${PV}"
 }
 
 src_install() {

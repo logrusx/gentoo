@@ -1,0 +1,65 @@
+# Copyright 1999-2024 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+inherit desktop xdg
+
+APP_NAME="freeplane"
+
+DESCRIPTION="Java application for Mind Mapping, Knowledge and Project Management"
+HOMEPAGE="https://www.freeplane.org/"
+SRC_URI="https://github.com/freeplane/freeplane/releases/download/release-${PV}/freeplane_bin-${PV}.zip"
+
+S="${WORKDIR}/${APP_NAME}-${PV}"
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~amd64"
+IUSE="doc wayland"
+
+RDEPEND="|| (
+				virtual/jre:11
+				virtual/jre:17
+				virtual/jre:21
+			)"
+BDEPEND="
+	app-arch/unzip"
+
+src_prepare() {
+
+	if ! use doc ; then
+		rm -rf "{$S"}/doc/api
+	fi
+
+	default
+
+}
+
+src_install() {
+	sed -e "/freepath=/s:=.*:=${EPREFIX}/opt/${APP_NAME}:" \
+		-i freeplane.sh
+
+	if ! use wayland; then
+		sed -i 's|"\${JAVACMD}" -XX:MaxRAM=20g -XX:MaxRAMPercentage=15.0\\|_JAVA_AWT_WM_NONREPARENTING=1 "\${JAVACMD}" -XX:MaxRAM=20g -XX:MaxRAMPercentage=15.0\\|' freeplane.sh || die
+	fi
+
+	newbin freeplane.sh freeplane
+
+	# install icons
+	newicon "${S}/freeplane.png" "${APP_NAME}.png"
+
+	make_desktop_entry "${APP_NAME}" "Freeplane" "${APP_NAME}" "Education" "MimeType=application/x-mind;
+StartupWMClass=org-knopflerfish-framework-BundleThread"
+
+	insinto "/opt/${APP_NAME}"
+	doins framework.jar freeplanelauncher.jar \
+		freeplane.policy props.xargs init.xargs *.l4j.ini
+	doins -r core doc plugins resources
+}
+
+pkg_postinst() {
+	ewarn "Freeplane cannot work with Java-25."
+	ewarn "The user should make sure it's running with Java <25"
+	ewarn "https://wiki.gentoo.org/wiki/Java#Configuring_the_Java_Virtual_Machine"
+}
